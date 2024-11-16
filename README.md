@@ -5,7 +5,7 @@
 - [x] tidy build process
 - [x] setup database(vercel postgres)
 - [x] Attach db to ui
-- [ ] add auth(clerk)
+- [x] add auth(clerk)
 - [ ] add img uplaod
 - [ ] error management (sentry)
 - [ ] Routing / image page
