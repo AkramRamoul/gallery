@@ -1,6 +1,6 @@
 import { db } from "~/server/db";
-import { posts } from "~/server/db/schema";
 
+export const dynamic = "force-dynamic";
 const mockPosts = [
   "https://utfs.io/f/9IXYuTxot9BzGBevudDrvURZynd6TE3MAYSCxIwj4Ltc1gzu",
   "https://utfs.io/f/9IXYuTxot9BzoFTLgki8qKJYUtrPigmnL0IW7ufdTpzFRwVe",
