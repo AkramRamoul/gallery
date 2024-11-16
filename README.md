@@ -7,6 +7,7 @@
 - [x] Attach db to ui
 - [x] add auth(clerk)
 - [ ] add img uplaod
+- [ ] "taint" (server only)
 - [ ] error management (sentry)
 - [ ] Routing / image page
 - [ ] delete button
