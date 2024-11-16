@@ -8,6 +8,7 @@
 - [x] add auth(clerk)
 - [ ] add img uplaod
 - [ ] "taint" (server only)
+- [ ] use Image
 - [ ] error management (sentry)
 - [ ] Routing / image page
 - [ ] delete button
