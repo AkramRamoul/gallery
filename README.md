@@ -3,8 +3,8 @@
 - [x] Make it deploy(vercel)
 - [x] Scaffold ui mock data
 - [x] tidy build process
-- [ ] setup database(vercel postgres)
-- [ ] Attach db to ui
+- [x] setup database(vercel postgres)
+- [x] Attach db to ui
 - [ ] add auth(clerk)
 - [ ] add img uplaod
 - [ ] error management (sentry)
