@@ -11,6 +11,7 @@
 - [x] use Image
 - [x] error management (sentry)
 - [x] Routing / image page
-- [ ] delete button
+- [x] Better Uploadbutton
 - [ ] Analytics (posthog)
+- [ ] delete button
 - [ ] Ratelimiting (upstash)
