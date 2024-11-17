@@ -30,6 +30,7 @@ const useUploadThingInputProps = (...args: Input) => {
 };
 
 import React from "react";
+import { toast } from "sonner";
 
 function UploadSVG() {
   return (
@@ -56,7 +57,16 @@ export function SimpleUploadButton() {
   const { inputProps, isUploading } = useUploadThingInputProps(
     "imageUploader",
     {
+      onUploadBegin() {
+        toast("Uploading", {
+          duration: 100000,
+          id: "upload-begin",
+        });
+      },
+
       onClientUploadComplete() {
+        toast.dismiss("upload-begin");
+        toast.success("Upload complete");
         router.refresh();
       },
     },
