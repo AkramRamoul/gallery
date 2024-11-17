@@ -7,20 +7,23 @@ export const dynamic = "force-dynamic";
 async function Images() {
   const images = await getMyImages();
   return (
-    <div className="flex flex-wrap justify-center gap-4 p-4">
+    <div className="grid grid-cols-2 gap-4 p-4 sm:grid-cols-3 md:grid-cols-4">
       {images.map((image) => (
-        <div key={image.id} className="relative flex flex-col">
+        <div
+          key={image.id}
+          className="relative aspect-square w-full overflow-hidden bg-gray-200"
+        >
           <Link href={`/img/${image.id}`}>
             <Image
-              priority={true}
               src={image.url}
-              style={{ objectFit: "contain" }}
+              fill
+              style={{ objectFit: "cover" }}
               alt={image.name}
-              width={192}
-              height={192}
             />
           </Link>
-          <div className="line-clamp-1">{image.name}</div>
+          <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 p-1 text-center text-sm text-white">
+            {image.name}
+          </div>
         </div>
       ))}
     </div>
@@ -29,7 +32,7 @@ async function Images() {
 
 export default async function HomePage() {
   return (
-    <main className="">
+    <main>
       <SignedOut>
         <div className="h-full w-full text-center text-2xl">
           Please sign in above

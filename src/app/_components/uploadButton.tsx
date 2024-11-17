@@ -58,7 +58,7 @@ export function SimpleUploadButton() {
     "imageUploader",
     {
       onUploadBegin() {
-        toast("Uploading", {
+        toast.loading("Uploading", {
           duration: 100000,
           id: "upload-begin",
         });
