@@ -10,7 +10,7 @@
 - [x] "taint" (server only)
 - [x] use Image
 - [x] error management (sentry)
-- [ ] Routing / image page
+- [x] Routing / image page
 - [ ] delete button
 - [ ] Analytics (posthog)
 - [ ] Ratelimiting (upstash)
