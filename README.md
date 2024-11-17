@@ -9,7 +9,7 @@
 - [x] add img uplaod
 - [x] "taint" (server only)
 - [x] use Image
-- [ ] error management (sentry)
+- [x] error management (sentry)
 - [ ] Routing / image page
 - [ ] delete button
 - [ ] Analytics (posthog)
