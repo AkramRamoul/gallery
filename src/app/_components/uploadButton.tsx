@@ -31,6 +31,7 @@ const useUploadThingInputProps = (...args: Input) => {
 
 import React from "react";
 import { toast } from "sonner";
+import { usePostHog } from "posthog-js/react";
 
 function UploadSVG() {
   return (
@@ -53,11 +54,13 @@ function UploadSVG() {
 
 export function SimpleUploadButton() {
   const router = useRouter();
+  const posthog = usePostHog();
 
   const { inputProps, isUploading } = useUploadThingInputProps(
     "imageUploader",
     {
       onUploadBegin() {
+        posthog.capture("upload-begin");
         toast.loading("Uploading", {
           duration: 100000,
           id: "upload-begin",
