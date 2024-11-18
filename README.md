@@ -12,6 +12,6 @@
 - [x] error management (sentry)
 - [x] Routing / image page
 - [x] Better Uploadbutton
-- [ ] Analytics (posthog)
+- [x] Analytics (posthog)
 - [ ] delete button
 - [ ] Ratelimiting (upstash)

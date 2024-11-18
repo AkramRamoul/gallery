@@ -23,17 +23,17 @@ function PostHogAuthWrapper({ children }: { children: React.ReactNode }) {
   const auth = useAuth();
   const UserInfo = useUser();
   useEffect(() => {
-    if (UserInfo.user) {
-      posthog.identify(UserInfo.user.id, {
-        email: UserInfo.user.emailAddresses[0]?.emailAddress,
-        name: UserInfo.user.fullName,
-      });
-    } else {
-      if (!auth.isSignedIn) {
+    if (auth.isLoaded && UserInfo.isLoaded) {
+      if (UserInfo.user) {
+        posthog.identify(UserInfo.user.id, {
+          email: UserInfo.user.emailAddresses[0]?.emailAddress,
+          name: UserInfo.user.fullName,
+        });
+      } else if (!auth.isSignedIn) {
         posthog.reset();
       }
-      posthog.reset();
     }
-  }, [UserInfo.user, auth.isSignedIn]);
+  }, [UserInfo.isLoaded, UserInfo.user, auth.isLoaded, auth.isSignedIn]);
+
   return children;
 }
