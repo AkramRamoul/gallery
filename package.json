@@ -26,6 +26,7 @@
     "@sentry/nextjs": "^8.38.0",
     "@t3-oss/env-nextjs": "^0.10.1",
     "@uploadthing/react": "^7.1.1",
+    "@upstash/ratelimit": "^2.0.4",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "dotenv": "^16.4.5",

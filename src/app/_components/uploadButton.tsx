@@ -2,7 +2,9 @@
 
 import { useRouter } from "next/navigation";
 import { useUploadThing } from "~/utils/uploadthing";
-
+import React from "react";
+import { toast } from "sonner";
+import { usePostHog } from "posthog-js/react";
 // inferred input off useUploadThing
 type Input = Parameters<typeof useUploadThing>;
 
@@ -28,10 +30,6 @@ const useUploadThingInputProps = (...args: Input) => {
     isUploading: $ut.isUploading,
   };
 };
-
-import React from "react";
-import { toast } from "sonner";
-import { usePostHog } from "posthog-js/react";
 
 function UploadSVG() {
   return (
@@ -66,7 +64,11 @@ export function SimpleUploadButton() {
           id: "upload-begin",
         });
       },
-
+      onUploadError() {
+        posthog.capture("upload-error", { error: "Upload failed" });
+        toast.dismiss("upload-begin");
+        toast.error("Upload failed");
+      },
       onClientUploadComplete() {
         toast.dismiss("upload-begin");
         toast.success("Upload complete");
