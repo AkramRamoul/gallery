@@ -14,22 +14,26 @@ export default async function FullPageImage(props: { id: string }) {
 
   return (
     <div className="flex h-full w-screen min-w-0 items-center justify-center overflow-hidden text-white">
-      <div className="itam-center relative flex flex-shrink flex-grow justify-center">
-        <Image src={image.url} width={750} height={680} alt={image.name} />
+      <div className="relative flex flex-grow items-center justify-center bg-black">
+        <div className="relative aspect-[4/3] w-full max-w-[750px]">
+          <Image
+            src={image.url}
+            alt={image.name}
+            fill
+            className="object-contain"
+          />
+        </div>
       </div>
-      <div className="w-68 flex h-full flex-shrink-0 flex-col items-center border-l">
+      <div className="w-68 flex h-full flex-shrink-0 flex-col items-center border-l sm:w-56 lg:w-80">
         <div className="border-b p-2 text-center text-xl">{image.name}</div>
-
         <div className="flex gap-1 p-2">
           <div>Uploaded By:</div>
           <div>{uploaderInfo.fullName}</div>
         </div>
-
         <div className="flex gap-1 p-2">
           <div>Created On:</div>
           <div>{image.createdAt.toLocaleDateString()}</div>
         </div>
-
         <div className="mt-6 flex justify-center p-2">
           <form
             action={async () => {
@@ -37,7 +41,7 @@ export default async function FullPageImage(props: { id: string }) {
               await deleteImage(idAsNumber);
             }}
           >
-            <Button type="submit" variant={"destructive"}>
+            <Button type="submit" variant="destructive">
               Delete
             </Button>
           </form>
