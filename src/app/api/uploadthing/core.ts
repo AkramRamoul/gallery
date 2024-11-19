@@ -10,6 +10,12 @@ export const ourFileRouter = {
   imageUploader: f({ image: { maxFileSize: "4MB", maxFileCount: 5 } })
     .middleware(async ({ req }) => {
       const user = await auth();
+      // const clerk = await clerkClient();
+      // const uploaderInfo = await clerk.users.getUser(user.userId!);
+
+      // if (uploaderInfo?.privateMetadata?.["can-upload"] !== true) {
+      //   throw new Error("No upload permissions");
+      // }
 
       if (!user.userId) {
         throw new Error("Unauthorized");
