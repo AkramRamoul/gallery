@@ -3,15 +3,18 @@ import { db } from "./db";
 import { auth } from "@clerk/nextjs/server";
 import { images } from "./db/schema";
 import { redirect } from "next/navigation";
-import { NextResponse } from "next/server";
 import { and, eq } from "drizzle-orm";
 import analyticsServerClient from "./analytics";
 import { revalidatePath } from "next/cache";
-
+export type State = {
+  status: "error" | "success" | undefined;
+  error?: string;
+  message?: string | null;
+};
 export async function getMyImages() {
   const user = await auth();
   if (!user.userId) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    throw new Error("Unauthorized");
   }
   const images = await db.query.images.findMany({
     where: (model, { eq }) => eq(model.userId, user.userId),
