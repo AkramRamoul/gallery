@@ -100,6 +100,6 @@ Sentry
 
 ## Contact
 
-Author: Akram Ramoul
-Email: ahmedakramramoul@gmil.com
-GitHub: AkramRamoul
+- Author: Akram Ramoul
+- Email: ahmedakramramoul@gmil.com
+- GitHub: AkramRamoul
