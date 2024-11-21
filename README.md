@@ -102,4 +102,4 @@ Sentry
 
 - Author: Akram Ramoul
 - Email: ahmedakramramoul@gmil.com
-- GitHub: AkramRamoul
+- GitHub: AkramRamoul(https://github.com/AkramRamoul)
