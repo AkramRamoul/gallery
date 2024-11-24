@@ -15,6 +15,7 @@
 - [x] Analytics (posthog)
 - [x] delete button
 - [x] Ratelimiting (upstash)
+- [ ] infinite scroll
 - [ ] Add Albums
 - [ ] Album rename
 - [ ] Almbum delete
