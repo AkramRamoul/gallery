@@ -14,7 +14,8 @@ export type State = {
 export async function getMyImages() {
   const user = await auth();
   if (!user.userId) {
-    throw new Error("Unauthorized");
+    console.log("No user logged in. Returning empty images list.");
+    return [];
   }
   const images = await db.query.images.findMany({
     where: (model, { eq }) => eq(model.userId, user.userId),
